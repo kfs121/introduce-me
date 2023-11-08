@@ -53,6 +53,13 @@ const $techniqueBackendWords = document.querySelectorAll("#technique-backend .te
 textAni($techniqueBackend, $techniqueBackendTitle, $techniqueBackendWords);
 
 
+const $techniqueEtc = document.querySelector("#technique-etc");
+const $techniqueEtcTitle = document.querySelector("#technique-etc h4");
+const $techniqueEtcWords = document.querySelectorAll("#technique-etc .text-wrap");
+
+textAni($techniqueEtc, $techniqueEtcTitle, $techniqueEtcWords);
+
+
 
 
 function textAni($section, $title, $description) {
