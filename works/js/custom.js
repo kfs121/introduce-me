@@ -1,12 +1,13 @@
 // main
 const $mouse = document.querySelector("#mouse");
 const $contentSlideUl = document.querySelector("#contents-slide .inner ul");
-const $contentSlideLi = document.querySelector("#contents-slide .inner ul li a");
+const $contentSlideLi = document.querySelector("#contents-slide .inner ul li");
+const $contentSlideLiWork = document.querySelector("#contents-slide .inner ul li .work");
+const $$contentSlideLi = document.querySelectorAll("#contents-slide .inner ul li");
 
 const pointWidth = 1660;
 
-const ONE_SLIDE_ELEMENTAL_WIDTH =  Number(getStlyeValue($contentSlideLi, "width").replace("px", "")) +
-  Number(getStlyeValue($contentSlideUl, "gap").split(" ")[1].replace("px", ""));
+const ONE_SLIDE_ELEMENTAL_WIDTH =  640
 
 const SLIDE_WIDTH = ONE_SLIDE_ELEMENTAL_WIDTH * $contentSlideUl.childElementCount;
 const MAX_SLIDE = -SLIDE_WIDTH + ONE_SLIDE_ELEMENTAL_WIDTH * 1;
@@ -20,7 +21,6 @@ let userMouseY;
 const isMobile = checkMobile();
 
 const scrollEvent = function (e) {
-
   let scroll = e.deltaY;
   if (
     currContentsLeftPx - scroll < 100 &&
@@ -75,7 +75,6 @@ function setScrollEvent(windowWidth){
     if(currScrollEventEnv === 2) return;
     removeInitScrollEvent();
   } else {
-    
     $contentSlideUl.style.width = SLIDE_WIDTH + "px";
     if(currScrollEventEnv === 1) return;
     initScrollEvent();
@@ -104,6 +103,14 @@ function initMouseEnv(){
   $$a.forEach(function ($element) {
     $element.addEventListener("mouseout", removeMouseHoverEvent);
   });
+  
+  $$contentSlideLi.forEach(function ($element) {
+    $element.addEventListener("mouseover", mouseHoverEvent);
+  });
+
+  $$contentSlideLi.forEach(function ($element) {
+    $element.addEventListener("mouseout", removeMouseHoverEvent);
+  });
 }
 
 
@@ -116,6 +123,13 @@ function removeInitMouseEnv(){
   });
 
   $$a.forEach(function ($element) {
+    $element.removeEventListener("mouseout", removeMouseHoverEvent);
+  });
+  $$contentSlideLi.forEach(function ($element) {
+    $element.removeEventListener("mouseover", mouseHoverEvent);
+  });
+
+  $$contentSlideLi.forEach(function ($element) {
     $element.removeEventListener("mouseout", removeMouseHoverEvent);
   });
 }
