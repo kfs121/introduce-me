@@ -1,6 +1,6 @@
 const $title = document.querySelector("#history-wrap h3.title");
 const $selfie = document.querySelector(".cover-letter .inner .left");
-
+const $$textSections = document.querySelectorAll(".text-section");
 gsap.from($title, {
   filter: "blur(30px)",
   scrollTrigger: {
@@ -8,7 +8,7 @@ gsap.from($title, {
     start: "top top",
     end: "+=2000",
     scrub: true,
-    markers: true,
+    //markers: true,
     pin: true,
     anticipatePin: 1,
   },
@@ -18,10 +18,10 @@ gsap.to($selfie, {
   scrollTrigger: {
     trigger: $selfie,
     start: "-=80",
-    end: "+=10000",
+    end: `+=${$$textSections.length*2000*2}`,
     pin: true,
     anticipatePin: 1,
-    markers: true,
+    //markers: true,
   },
 });
 
@@ -39,11 +39,18 @@ const $etcWords = document.querySelectorAll("#etc .text-wrap");
 textAni($etc, $etcTitle, $etcWords);
 
 
-const $technique = document.querySelector("#technique");
-const $techniqueTitle = document.querySelector("#technique h4");
-const $techniqueWords = document.querySelectorAll("#technique .text-wrap");
+const $techniqueFront = document.querySelector("#technique-front");
+const $techniqueFrontTitle = document.querySelector("#technique-front h4");
+const $techniqueFrontWords = document.querySelectorAll("#technique-front .text-wrap");
 
-textAni($technique, $techniqueTitle, $techniqueWords);
+textAni($techniqueFront, $techniqueFrontTitle, $techniqueFrontWords);
+
+
+const $techniqueBackend = document.querySelector("#technique-backend");
+const $techniqueBackendTitle = document.querySelector("#technique-backend h4");
+const $techniqueBackendWords = document.querySelectorAll("#technique-backend .text-wrap");
+
+textAni($techniqueBackend, $techniqueBackendTitle, $techniqueBackendWords);
 
 
 
@@ -60,7 +67,7 @@ function textAni($section, $title, $description) {
     pin: true,
     anticipatePin: 1,
     pinSpacing: false,
-    markers: true,
+    //markers: true,
     toggleActions: "play none reverse none",
   });
 }
