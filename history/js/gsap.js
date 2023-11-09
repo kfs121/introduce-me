@@ -1,12 +1,13 @@
 const $title = document.querySelector("#history-wrap h3.title");
 const $selfie = document.querySelector(".cover-letter .inner .left");
 const $$textSections = document.querySelectorAll(".text-section");
+
 gsap.from($title, {
   filter: "blur(30px)",
   scrollTrigger: {
     trigger: "#history-wrap .title-section",
     start: "top top",
-    end: "+=2000",
+    end: "+=3000",
     scrub: true,
     //markers: true,
     pin: true,
@@ -25,56 +26,41 @@ gsap.to($selfie, {
   },
 });
 
-const $history = document.querySelector("#history");
-const $historyTitle = document.querySelector("#history h4");
-const $historyWords = document.querySelectorAll("#history .text-wrap");
-
-textAni($history, $historyTitle, $historyWords);
+$$textSections.forEach($textSection=>{
+  textAni($textSection);
+});
 
 
-const $etc = document.querySelector("#etc");
-const $etcTitle = document.querySelector("#etc h4");
-const $etcWords = document.querySelectorAll("#etc .text-wrap");
-
-textAni($etc, $etcTitle, $etcWords);
-
-
-const $techniqueFront = document.querySelector("#technique-front");
-const $techniqueFrontTitle = document.querySelector("#technique-front h4");
-const $techniqueFrontWords = document.querySelectorAll("#technique-front .text-wrap");
-
-textAni($techniqueFront, $techniqueFrontTitle, $techniqueFrontWords);
-
-
-const $techniqueBackend = document.querySelector("#technique-backend");
-const $techniqueBackendTitle = document.querySelector("#technique-backend h4");
-const $techniqueBackendWords = document.querySelectorAll("#technique-backend .text-wrap");
-
-textAni($techniqueBackend, $techniqueBackendTitle, $techniqueBackendWords);
-
-
-const $techniqueEtc = document.querySelector("#technique-etc");
-const $techniqueEtcTitle = document.querySelector("#technique-etc h4");
-const $techniqueEtcWords = document.querySelectorAll("#technique-etc .text-wrap");
-
-textAni($techniqueEtc, $techniqueEtcTitle, $techniqueEtcWords);
-
-
-
-
-function textAni($section, $title, $description) {
+function textAni($section) {
   const ani = gsap.timeline();
-  ani.from($title, { duration: 0.3, y: 50, autoAlpha: 0 })
-    .from($description, { duration: 0.3, y: 50, autoAlpha: 0,stagger:0.1 });
+  const $title = $section.querySelector("h4");
+  const $$gauge = $section.querySelectorAll(".gauge");
+  const $$description = $section.querySelectorAll(".text-wrap");
+  ani.from($title, { duration: 0.3, y: 50, autoAlpha: 0, fontSize:36 })
+    .from($$description, { duration: 0.3, y: 50, autoAlpha: 0, stagger:0.1 });
   ScrollTrigger.create({
     animation: ani,
     trigger: $section,
-    start: "-=100",
+    start: "top top",
     end: "+=2000",
     pin: true,
     anticipatePin: 1,
     pinSpacing: false,
     //markers: true,
     toggleActions: "play none reverse none",
+    onEnter:()=>{
+      if($$gauge.length !== 0){
+        $$gauge.forEach(($gauge)=>{
+          $gauge.classList.add('ani');
+        })
+      }
+    },
+    // onLeave:()=>{
+    //   if($$gauge.length !== 0){
+    //     $$gauge.forEach(($gauge)=>{
+    //       $gauge.style.animationDirection='reverse';
+    //     })
+    //   }
+    // }
   });
 }

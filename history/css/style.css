@@ -58,18 +58,27 @@ body {cursor: url('../../img/ui/cursor-history.png') 6 6, auto; overflow-x: hidd
 .cover-letter .inner .left img{width: 100%; height: 880px; object-fit: cover;}
 
 
-.cover-letter .inner .right{flex: 50%; font-size: 2rem; }
-.cover-letter .inner .right>section{ box-sizing: border-box; padding: 4rem;}
-.cover-letter .inner .right>section h4 { font-size: 3rem; }
-.cover-letter .inner .right>section .text-section { margin-top: 1rem; }
+.cover-letter .inner .right{flex: 50%; }
+.cover-letter .inner .right>section{ box-sizing: border-box;}
+.cover-letter .inner .right>section h4 { font-size: 1.6rem !important; }
+.cover-letter .inner .right .text-section { display: flex; flex-direction: column; justify-content: center; box-sizing: border-box; padding-left: 8rem; height: 100vh; margin-top: 2000px; box-sizing: border-box;}
 
+.text-section:first{margin-top: 500px;}
+.text-section:last-child{margin-bottom: 500px;}
 
+.text-wrap {margin-top: 2rem; font-size: 1rem; }
 
-.text-section{height: 100vh; margin-top: 2000px;}
-.text-wrap {margin-top: 2rem;}
+.gauge-wrap {display: flex; align-items: center; justify-content: space-between; width: 250px;}
+.gauge-wrap .gauge {width: 0; height: 16px; background-image: linear-gradient(to bottom, aqua,royalblue); border-radius: 6px; margin-top: 2px;}
+.gauge-wrap span{line-height: 16px;}
 
+.gauge-wrap .gauge.ani{ animation: aniGauge 1s ease-out forwards;}
+.gauge-wrap .gauge.ani-reverse{ animation: aniGauge 1s ease-out reverse;}
 
-
+@keyframes aniGauge {
+  0%{width: 0;}
+  100%{width: calc(var(--percent) * 2px);}
+}
 
 
 
@@ -78,11 +87,6 @@ body {cursor: url('../../img/ui/cursor-history.png') 6 6, auto; overflow-x: hidd
   a:hover {cursor: url('../../img/ui/cursor-hover.png') 22 22, auto;}
   .hover-mouse{ backdrop-filter: invert(100) !important; width: 120px !important; height: 120px !important; border-radius: 120px !important;}
   #header .gnb>ul>li>a:hover{font-size: 28px;}
-  #contents-slide .inner ul a:hover{width: 500px; filter: grayscale(0);}
   #mouse {position: absolute; z-index: 9999; top: 0; left: 0; border: 3px solid #fff; width: 70px; height: 70px; border-radius: 70px; transform: translate(-50%, -50%); box-shadow: 0 0 15px #000000; pointer-events: none; transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
   }
 }
-
-
-
-.height_div{height: 1200px; background-color: black;}
