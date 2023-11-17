@@ -18,6 +18,7 @@ body {cursor: url('../../img/ui/cursor-normal.png') 6 6, auto; overflow: hidden;
 
 
 
+body{font-size: 16px;}
 
 .inner {width: 1660px; margin: 0 auto;}
 /* body * {outline: 1px dotted red;} */
@@ -49,7 +50,16 @@ body {cursor: url('../../img/ui/cursor-normal.png') 6 6, auto; overflow: hidden;
 #contents-slide .inner ul li{position: relative; overflow: hidden; transition: .5s; width: 320px;}
 #contents-slide .inner ul li .work{ display: block; width: 320px; height: 540px; filter: grayscale(100); transition: .5s;}
 #contents-slide .inner ul img{ object-fit: cover; object-position: center; height: 100%; position: absolute; width: 100%;}
-#contents-slide .inner ul .description{ height: 100%; position: absolute; width: 100%; background-color: rgba(0, 0, 0, .7);right: -100%; transition: 1s;}
+#contents-slide .inner ul .description{ height: 100%; position: absolute; width: 100%; background-color: rgba(0, 0, 0, .7);right: -100%; transition: 1s; box-sizing: border-box; padding: 40px; color: white; gap: 1rem; display: flex; flex-direction: column; align-items: center;}
+#contents-slide .inner ul .description a{ color: orange;}
+
+#contents-slide .inner ul .description>h4{ text-align: center; font-size: 1.4rem; flex: 1;}
+#contents-slide .inner ul .description>.source-wrap{ flex: 2;}
+#contents-slide .inner ul .description .source{ display: flex; flex-direction: column;align-items: center; margin-top: .8rem;}
+#contents-slide .inner ul .description .source:first-of-type{ margin-top: 0;}
+#contents-slide .inner ul .description .source>span::after{content: " :";}
+#contents-slide .inner ul .description>p{padding: 0 1.5rem; overflow-y: auto; flex: 4;}
+#contents-slide .inner ul .description>a{display: inline;}
 
 
 
@@ -71,7 +81,7 @@ body {cursor: url('../../img/ui/cursor-normal.png') 6 6, auto; overflow: hidden;
   #contents-slide {margin-top: 100px;}
   #contents-slide .inner ul{flex-wrap: wrap; overflow: unset; justify-content: space-evenly; gap: 40px 20px; width: 100%;}
   #contents-slide .inner ul li{text-align: center;}
-  #contents-slide .inner ul .work { filter: grayscale(0) !important; width: 400px !important;}
+  #contents-slide .inner ul .work { filter: grayscale(0) !important; width: 400px !important; transition: .3s;}
   #contents-slide .inner ul img{ height: 540px; width: 100%;}
   #contents-slide .inner ul .description{right: 0;background-color: rgba(0, 0, 0, .3);}
   

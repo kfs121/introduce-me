@@ -27,6 +27,8 @@ body {cursor: url('../../img/ui/cursor-history.png') 6 6, auto; overflow-x: hidd
 #wrap{background-color: var(--bg-color); color: var(--font-color);}
 
 
+.text-section { display: flex; flex-direction: column; justify-content: center; box-sizing: border-box; padding-left: 8rem; height: 100vh; margin-top: 2000px; box-sizing: border-box;}
+
 
 
 
@@ -54,11 +56,13 @@ body {cursor: url('../../img/ui/cursor-history.png') 6 6, auto; overflow-x: hidd
 #history-wrap .title-section h3{font-size: 10rem;}
 
 .cover-letter .inner{display: flex; max-width: 1660px !important;}
-.cover-letter .inner .left{flex: 50%;}
-.cover-letter .inner .left img{width: 100%; height: 880px; object-fit: cover;}
+.cover-letter .inner .left{flex: 50%; height: calc(100vh - 80px); box-sizing: border-box;}
+.cover-letter .inner .left .text-section{width: 100%; box-sizing: border-box; padding-top: 80px;}
+.cover-letter .inner .left .text-section:nth-of-type(1){margin-top: 0;}
+.cover-letter .inner .left .text-section img{width: 100%; height: 100%; object-fit: contain; display: block;}
 
 
-.cover-letter .inner .right{flex: 50%; }
+.cover-letter .inner .right{flex: 50%;}
 .cover-letter .inner .right>section{ box-sizing: border-box;}
 .cover-letter .inner .right>section h4 { font-size: 1.6rem !important; }
 .cover-letter .inner .right .text-section { display: flex; flex-direction: column; justify-content: center; box-sizing: border-box; padding-left: 8rem; height: 100vh; margin-top: 2000px; box-sizing: border-box;}
@@ -72,8 +76,11 @@ body {cursor: url('../../img/ui/cursor-history.png') 6 6, auto; overflow-x: hidd
 .gauge-wrap .gauge {width: 0; height: 16px; background-image: linear-gradient(to bottom, aqua,royalblue); border-radius: 6px; margin-top: 2px;}
 .gauge-wrap span{line-height: 16px;}
 
-.gauge-wrap .gauge.ani{ animation: aniGauge 1s ease-out forwards;}
-.gauge-wrap .gauge.ani-reverse{ animation: aniGauge 1s ease-out reverse;}
+.gauge-wrap .gauge.ani{ animation: aniGauge 1.5s ease-out forwards;}
+/* .gauge-wrap .gauge.ani-reverse{ animation: aniGauge 1s ease-out reverse;} */
+
+
+#email-section{height: 100vh; width: 100%; margin-top: 2000px;}
 
 @keyframes aniGauge {
   0%{width: 0;}

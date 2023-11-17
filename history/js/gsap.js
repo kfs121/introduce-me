@@ -1,7 +1,10 @@
 const $title = document.querySelector("#history-wrap h3.title");
-const $selfie = document.querySelector(".cover-letter .inner .left");
-const $$textSections = document.querySelectorAll(".text-section");
+const $selfie = document.querySelector(".cover-letter .inner .left #selfie");
+const $toMountain = document.querySelector(".cover-letter .inner .left #to-mountain");
+const $$textSections = document.querySelectorAll(".right .text-section");
 
+const SECTION_MARGIN = 2000;
+console.log($$textSections.length);
 gsap.from($title, {
   filter: "blur(30px)",
   scrollTrigger: {
@@ -18,8 +21,19 @@ gsap.from($title, {
 gsap.to($selfie, {
   scrollTrigger: {
     trigger: $selfie,
-    start: "-=80",
-    end: `+=${$$textSections.length*2000*2}`,
+    start: "top top",
+    end: `+=${(3)*SECTION_MARGIN + 3*innerHeight + innerHeight + 80-6}`,
+    pin: true,
+    anticipatePin: 1,
+    //markers: true,
+  },
+});
+
+gsap.to($toMountain, {
+  scrollTrigger: {
+    trigger: $toMountain,
+    start: "top top",
+    end: `+=${(3)*SECTION_MARGIN + (3)*innerHeight - innerHeight}`,
     pin: true,
     anticipatePin: 1,
     //markers: true,

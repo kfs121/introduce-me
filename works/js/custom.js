@@ -104,13 +104,13 @@ function initMouseEnv(){
     $element.addEventListener("mouseout", removeMouseHoverEvent);
   });
   
-  $$contentSlideLi.forEach(function ($element) {
-    $element.addEventListener("mouseover", mouseHoverEvent);
-  });
+  // $$contentSlideLi.forEach(function ($element) {
+  //   $element.addEventListener("mouseover", mouseHoverEvent);
+  // });
 
-  $$contentSlideLi.forEach(function ($element) {
-    $element.addEventListener("mouseout", removeMouseHoverEvent);
-  });
+  // $$contentSlideLi.forEach(function ($element) {
+  //   $element.addEventListener("mouseout", removeMouseHoverEvent);
+  // });
 }
 
 
