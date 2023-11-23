@@ -54,11 +54,15 @@ body{font-size: 16px;}
 #contents-slide .inner ul .description a{ color: orange;}
 
 #contents-slide .inner ul .description>h4{ text-align: center; font-size: 1.4rem; flex: 1;}
-#contents-slide .inner ul .description>.source-wrap{ flex: 2;}
+#contents-slide .inner ul .description>.source-wrap{ flex: 2; overflow-y: auto; width: 300px;}
+#contents-slide .inner ul .description>.source-wrap::-webkit-scrollbar{background-color: rgba(0, 0, 0, 0); width: 10px;}
+#contents-slide .inner ul .description>.source-wrap::-webkit-scrollbar-thumb{background-color: rgba(247, 247, 247,.8); border-radius: 6px;}
 #contents-slide .inner ul .description .source{ display: flex; flex-direction: column;align-items: center; margin-top: .8rem;}
 #contents-slide .inner ul .description .source:first-of-type{ margin-top: 0;}
 #contents-slide .inner ul .description .source>span::after{content: " :";}
-#contents-slide .inner ul .description>p{padding: 0 1.5rem; overflow-y: auto; flex: 4;}
+#contents-slide .inner ul .description>p{padding: 0 1.5rem; overflow-y: auto; flex: 4; scrollbar-width: 4px; scrollbar-width: thin;}
+#contents-slide .inner ul .description>p::-webkit-scrollbar{background-color: rgba(0, 0, 0, 0); width: 10px;}
+#contents-slide .inner ul .description>p::-webkit-scrollbar-thumb{background-color: rgb(22, 22, 22); border-radius: 6px;}
 #contents-slide .inner ul .description>a{display: inline;}
 
 
@@ -81,9 +85,10 @@ body{font-size: 16px;}
   #contents-slide {margin-top: 100px;}
   #contents-slide .inner ul{flex-wrap: wrap; overflow: unset; justify-content: space-evenly; gap: 40px 20px; width: 100%;}
   #contents-slide .inner ul li{text-align: center;}
-  #contents-slide .inner ul .work { filter: grayscale(0) !important; width: 400px !important; transition: .3s;}
+  #contents-slide .inner ul .work { filter: grayscale(0) !important; width: 100% !important; transition: .3s;}
   #contents-slide .inner ul img{ height: 540px; width: 100%;}
-  #contents-slide .inner ul .description{right: 0;background-color: rgba(0, 0, 0, .3);}
+  #contents-slide .inner ul .description{right: 0;background-color: rgba(0, 0, 0, .3); padding: 10px;}
+  #contents-slide .inner ul .description>.source-wrap{ flex: unset;}
   
 
   #slide-area{display: none;}

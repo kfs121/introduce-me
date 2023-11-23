@@ -20,7 +20,9 @@ let userMouseY;
 
 const isMobile = checkMobile();
 
+//휠이벤트 막기
 const scrollEvent = function (e) {
+  if(e.target.classList.contains("no-scroll-event")) return;
   let scroll = e.deltaY;
   if (
     currContentsLeftPx - scroll < 100 &&
