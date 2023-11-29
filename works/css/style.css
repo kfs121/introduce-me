@@ -54,15 +54,15 @@ body{font-size: 16px;}
 #contents-slide .inner ul .description a{ color: orange;}
 
 #contents-slide .inner ul .description>h4{ text-align: center; font-size: 1.4rem; flex: 1;}
-#contents-slide .inner ul .description>.source-wrap{ flex: 2; overflow-y: auto; width: 300px;}
+#contents-slide .inner ul .description>.source-wrap{ flex: 2; overflow-y: auto; width: 300px; background-color: rgba(0,0,0,.5); box-sizing: border-box; padding: 1rem; border-radius: 20px;}
 #contents-slide .inner ul .description>.source-wrap::-webkit-scrollbar{background-color: rgba(0, 0, 0, 0); width: 10px;}
 #contents-slide .inner ul .description>.source-wrap::-webkit-scrollbar-thumb{background-color: rgba(247, 247, 247,.8); border-radius: 6px;}
 #contents-slide .inner ul .description .source{ display: flex; flex-direction: column;align-items: center; margin-top: .8rem;}
 #contents-slide .inner ul .description .source:first-of-type{ margin-top: 0;}
 #contents-slide .inner ul .description .source>span::after{content: " :";}
-#contents-slide .inner ul .description>p{padding: 0 1.5rem; overflow-y: auto; flex: 4; scrollbar-width: 4px; scrollbar-width: thin;}
+#contents-slide .inner ul .description>p{padding: 0 1.5rem; overflow-y: auto; flex: 4; scrollbar-width: 4px; scrollbar-width: thin; background-color: rgba(0,0,0,.5); box-sizing: border-box; padding: 1rem; border-radius: 20px;}
 #contents-slide .inner ul .description>p::-webkit-scrollbar{background-color: rgba(0, 0, 0, 0); width: 10px;}
-#contents-slide .inner ul .description>p::-webkit-scrollbar-thumb{background-color: rgb(22, 22, 22); border-radius: 6px;}
+#contents-slide .inner ul .description>p::-webkit-scrollbar-thumb{background-color: rgba(247, 247, 247,.8); border-radius: 6px;}
 #contents-slide .inner ul .description>a{display: inline;}
 
 

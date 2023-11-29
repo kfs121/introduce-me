@@ -56,6 +56,22 @@ if(!isMobile){
   document.addEventListener("scroll", (e)=>{
     mouse.style.top = window.scrollY + userMouseY + "px";
   });
+
+  const $$desciption = document.querySelectorAll('.work .description');
+  $$desciption.forEach(($desciption)=>{
+    const $p = $desciption.querySelector('p');
+    const $sourceWrap = $desciption.querySelector('.source-wrap');
+    if($p.clientHeight + 127 < $p.scrollHeight){
+      $p.classList.add('no-scroll-event');
+    }
+    if($sourceWrap.clientHeight < $sourceWrap.scrollHeight){
+      $sourceWrap.classList.add('no-scroll-event');
+      const $$sources = $sourceWrap.children;
+      for(let i = 0; i < $$sources.length; i++){
+        $$sources[i].classList.add('no-scroll-event');
+      }
+    }
+  })
 }else{
   removeInitMouseEnv();
 }
