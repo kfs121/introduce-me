@@ -25,7 +25,7 @@ body {cursor: url('../../img/ui/cursor-history.png') 6 6, auto; overflow-x: hidd
 
 
 .inner {width: 1660px; margin: 0 auto;}
-/* body * {outline: 1px dotted red;} */
+body * {outline: 1px dotted red;}
 #wrap{background-color: var(--bg-color); color: var(--font-color);}
 
 
@@ -104,6 +104,17 @@ body {cursor: url('../../img/ui/cursor-history.png') 6 6, auto; overflow-x: hidd
 
 #email-section .form-wrap form button{display: block; position: absolute; bottom: .3rem; color: #333; right: 2rem; font-family: 'Averia Serif Libre', serif; font-style: italic; font-size: 2.5rem; transition: 2s; opacity: 0; pointer-events: none; font-family: 'Vujahday Script', cursive; background-color: inherit; border: none;}
 #email-section .form-wrap form button.active{ opacity: 1; pointer-events: all;}
+#email-section .send__loading,
+#email-section .send__success{ width: 120px; height: 120px; position: absolute; left: 48%; top: 50%; z-index: 40; transform: translate(-50%, -50%);  background-repeat: no-repeat; background-position: center; background-size: contain; display: none;}
+
+#email-section .send__loading{ background-image: url(https://img.icons8.com/?size=96&id=4V3PMUWE1tYc&format=png); animation: ani-loading 3s infinite linear;}
+
+#email-section .send__success{ background-image: url(https://img.icons8.com/?size=100&id=sz8cPVwzLrMP&format=png); left: 52%; top: 56%;}
+
+@keyframes ani-loading {
+  0%{transform: rotateZ(0deg);}
+  100%{transform: rotateZ(360deg);}
+}
 
 @keyframes ani-paper {
   0%{top: -1px;}
