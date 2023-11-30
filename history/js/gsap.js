@@ -57,9 +57,9 @@ $$textSections.forEach($textSection=>{
 
 // 그리고 지금 height로 하긴 했는데, top 이미지 뒤에 zindex 더 낮은 거 설정하고, form을 그것보다 더 낮게하면 가릴 수 있을 듯. position으로 바꾸는 게 좋아 보임.
 const $mailFormWrap = document.querySelector('#email-section .form-wrap');
-
+const $sendBtn = $mailFormWrap.querySelector('button');
 gsap.from($mailFormWrap, {
-  top:'-550px',
+  top:'-600px',
   scrollTrigger: {
     trigger: "#email-section",
     start: "top top",
@@ -69,7 +69,12 @@ gsap.from($mailFormWrap, {
     pin: true,
     anticipatePin: 1,
     onLeave:()=>{
-      $mailFormWrap.querySelector('textarea').style.pointerEvents = 'all';
+      const $textArea = $mailFormWrap.querySelector('textarea');
+      $textArea.style.pointerEvents = 'all';
+      if($textArea.value.trim().length === 0){
+        $textArea.value = '';
+      }
+      $sendBtn.classList.add('active');
     }
   },
 });
