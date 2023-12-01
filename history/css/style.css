@@ -25,7 +25,7 @@ body {cursor: url('../../img/ui/cursor-history.png') 6 6, auto; overflow-x: hidd
 
 
 .inner {width: 1660px; margin: 0 auto;}
-body * {outline: 1px dotted red;}
+/* body * {outline: 1px dotted red;} */
 #wrap{background-color: var(--bg-color); color: var(--font-color);}
 
 
