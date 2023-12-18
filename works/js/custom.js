@@ -69,6 +69,8 @@ if(!isMobile){
       const $$sources = $sourceWrap.children;
       for(let i = 0; i < $$sources.length; i++){
         $$sources[i].classList.add('no-scroll-event');
+        $$sources[i].querySelector('a').classList.add('no-scroll-event');
+        $$sources[i].querySelector('span').classList.add('no-scroll-event');
       }
     }
   })

@@ -69,10 +69,13 @@ body {cursor: url('../../img/ui/cursor-history.png') 6 6, auto; overflow-x: hidd
 .cover-letter .inner .right>section h4 { font-size: 1.6rem !important; }
 .cover-letter .inner .right .text-section { display: flex; flex-direction: column; justify-content: center; box-sizing: border-box; padding-left: 8rem; height: 100vh; margin-top: 2000px; box-sizing: border-box;}
 
+
 .text-section:first{margin-top: 500px;}
 .text-section:last-child{margin-bottom: 500px;}
 
 .text-wrap {margin-top: 2rem; font-size: 1rem; }
+.text-wrap.blog {margin-top: 5rem;}
+.text-wrap.blog a{color: orange;}
 
 .gauge-wrap {display: flex; align-items: center; justify-content: space-between; width: 250px;}
 .gauge-wrap .gauge {width: 0; height: 16px; background-image: linear-gradient(to bottom, aqua,royalblue); border-radius: 6px; margin-top: 2px;}
