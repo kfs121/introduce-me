@@ -93,10 +93,12 @@ function setScrollEvent(windowWidth){
     currContentsLeftPx = 0;
     fillSlider(currContentsLeftPx);
     if(currScrollEventEnv === 2) return;
+    if(!isMobile) return;
     removeInitScrollEvent();
   } else {
     $contentSlideUl.style.width = SLIDE_WIDTH + "px";
     if(currScrollEventEnv === 1) return;
+    if(isMobile) return;
     initScrollEvent();
   }
 }

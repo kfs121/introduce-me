@@ -107,12 +107,13 @@ body {cursor: url('../../img/ui/cursor-history.png') 6 6, auto; overflow-x: hidd
 
 #email-section .form-wrap form button{display: block; position: absolute; bottom: .3rem; color: #333; right: 2rem; font-family: 'Averia Serif Libre', serif; font-style: italic; font-size: 2.5rem; transition: 2s; opacity: 0; pointer-events: none; font-family: 'Vujahday Script', cursive; background-color: inherit; border: none;}
 #email-section .form-wrap form button.active{ opacity: 1; pointer-events: all;}
-#email-section .send__loading,
-#email-section .send__success{ width: 120px; height: 120px; position: absolute; left: 48%; top: 50%; z-index: 40; transform: translate(-50%, -50%);  background-repeat: no-repeat; background-position: center; background-size: contain; display: none;}
+.send__loading,
+.send__success{ width: 120px; height: 120px; position: absolute; left: 48%; top: 50%; z-index: 40; transform: translate(-50%, -50%);  background-repeat: no-repeat; background-position: center; background-size: contain; display: none;}
 
-#email-section .send__loading{ background-image: url(https://img.icons8.com/?size=96&id=4V3PMUWE1tYc&format=png); animation: ani-loading 3s infinite linear;}
+.send__loading{ background-image: url(https://img.icons8.com/?size=96&id=4V3PMUWE1tYc&format=png); animation: ani-loading 3s infinite linear;}
 
-#email-section .send__success{ background-image: url(https://img.icons8.com/?size=100&id=sz8cPVwzLrMP&format=png); left: 52%; top: 56%;}
+.send__success{ background-image: url(https://img.icons8.com/?size=100&id=sz8cPVwzLrMP&format=png);}
+#email-section .send__success{ left: 52%; top: 56%;}
 
 @keyframes ani-loading {
   0%{transform: rotateZ(0deg);}
@@ -138,11 +139,95 @@ body {cursor: url('../../img/ui/cursor-history.png') 6 6, auto; overflow-x: hidd
 
 @keyframes aniGauge {
   0%{width: 0;}
-  100%{width: calc(var(--percent) * 2px);}
+  100%{width:  calc(var(--percent) * 1%);}
+}
+
+#mobile--email{height: 100vh; padding-top: 80px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; display: none;}
+#mobile--email .form-wrap{ width: 80%; height: 70%;}
+#mobile--email .form-wrap form{ display: flex; flex-direction: column; position: relative; height: 100%;}
+#mobile--email .form-wrap form label{ z-index: 10; color: #000; margin-left: 2rem; margin-top: 1rem;}
+#mobile--email .form-wrap form textarea{ height: 100%; position: absolute; width: 100%; z-index: 9; box-sizing: border-box; padding:2rem; padding-top: 50px; width: 100%; height: 100% !important; font-family: 'Noto Sans KR', sans-serif;}
+#mobile--email .form-wrap form label input{margin-left: .4rem; border: none; flex: 1; font-family: 'Noto Sans KR', sans-serif; outline: none;}
+#mobile--email .form-wrap form label input:focus{outline: none;}
+#mobile--email .form-wrap form button{display: block; position: absolute; bottom: .3rem; color: #333; right: 2rem; font-family: 'Averia Serif Libre', serif; font-style: italic; font-size: 2.5rem; transition: 2s; font-family: 'Vujahday Script', cursive; background-color: inherit; border: none; z-index: 10; cursor: pointer;}
+#mobile--email .form-wrap form button{ pointer-events: all;}
+
+#mobile--email .send__success{ left: 53%; top: 50%; }
+#mobile--email .send__loading{ left: 36%; top: 40%;}
+
+
+@media screen and (max-width:1659px) {
+  #wrap{height: unset !important; width: 100%; box-sizing: border-box;}
+  .inner {width: 100%;}
+  .inner:has(#header) .logo{display: none;}
+  .inner:has(#header) {background-color: rgb(0, 0, 0); position: fixed; top: 0; left: 50%;}
+
+  #header .gnb>ul{gap: 150px; width: 100%;}
+  #history-wrap .title-section h3{font-size: 8rem;}
+  /* .cover-letter .inner{display: flex; flex-direction: column;} */
+
+  .text-section {padding: 2rem; box-sizing: border-box;}
+
+  .cover-letter .inner .left{ height: calc(100vh - 80px); box-sizing: border-box !important;}
+  .cover-letter .inner .left .text-section{width: 100%; padding-top: 80px;}
+
+  .cover-letter .inner .right>section h4 { font-size: 1.4rem !important; }
+  .cover-letter .inner .right>section p { font-size: 1.2rem; }
+  .cover-letter .inner .right .text-section { display: flex; flex-direction: column; justify-content: center; box-sizing: border-box; padding-left: 2rem;}
+}
+
+@media screen and (max-width:1280px) {
+  .mailbox-top {width: 100%; padding: 20px; padding-bottom: 0; }
+  .mailbox-bottom { width: 100%; padding: 20px; padding-top: 0;}
+
+  #email-section .form-wrap{ position: absolute; box-sizing: border-box; top: -1px; width: 80%; padding-left: 107px; padding-right: 100px; }
+  #email-section .form-wrap form label{ font-size: 1.4rem; padding-left: 2rem;}
+  #email-section .form-wrap form label input{font-size: 1.2rem; width: 100%;}
+  #email-section .form-wrap form textarea{width: 100%; height: 100%; font-size: 1rem; line-height: 2rem; padding: 2rem;  padding-top: 3rem; }
+}
+@media screen and (max-width:897px) {
+  #email-section .form-wrap{ position: absolute; box-sizing: border-box; top: -1px; width: 86%; padding-left: 107px; padding-right: 100px; }
+}
+@media screen and (max-width:693px) {
+  #email-section .form-wrap{ position: absolute; box-sizing: border-box; top: -1px; width: 90%; padding-left: 107px; padding-right: 100px; }
+}
+
+@media screen and (max-width:615px) {
+  .cover-letter .inner{flex-direction: column;}
+  .cover-letter .inner .right .text-section { margin-top: 0px;}
+  .cover-letter .inner .left .text-section:nth-of-type(2){display: none;}
+  .gauge-wrap .gauge {width:  calc(var(--percent) * 1%);}
+
+  #history-wrap .title-section h3{font-size: 4rem;}
+
+  .gauge-wrap {width: 100%; padding-right: 4rem; box-sizing: border-box;}
+
+
+  .text-section:first{margin-top: 0px;}
+  #email-section{display: none;}
+  #mobile--email{display: flex;}
+  #history-wrap .right section:last-of-type{margin-bottom: 0;}
 }
 
 
 
+@media screen and (max-width:568px) {
+  #header .gnb>ul{gap: 60px; width: 100%;}
+  #header .gnb>ul>li>a{padding: 14px 0; font-size: 20px; color: #ffffff; font-weight: 400; transition: .2s; padding: 8px 0;}
+}
+
+@media screen and (max-width:415px) {
+  body {width: 100%;}
+  #header .gnb>ul{gap: 30px; width: 100%;}
+  /* #contents-slide .inner ul .work { width: 340px !important;} */
+  #header .gnb>ul>li>a{padding: 14px 0; font-size: 16px; color: #ffffff; font-weight: 400; transition: .2s; padding: 6px 0;}
+}
+
+@media screen and (max-width:340px) {
+  .inner:has(#header) {height: 60px;}
+  #header .gnb>ul{gap: 20px; width: 100%; font-size: 10px;}
+  #header .gnb>ul>li>a{padding: 14px 0; font-size: 16px; color: #ffffff; font-weight: 400; transition: .2s; padding: 6px 0;}
+}
 
 
 @media (hover:hover) and (pointer:fine) {
