@@ -27,14 +27,13 @@ body {cursor: url('../img/ui/cursor-normal.png') 6 6, auto; overflow: hidden;}
 #wrap{height: 100vh; }
 
 .inner:has(#header) {position: fixed; left: 0; right: 0; height: 80px; display: flex; justify-content: center; z-index: 30;}
-.inner:has(#header) .logo{ position: absolute; top: 50%; transform: translate(0,-50%); left: 0;}
+
 
 @media screen and (max-width:1659px) {
   .inner{width: 100%;}
 }
 @media screen and (max-width:912px) {
   #img-flip-area .image {display: block !important; width: 100px; height: 100px;}
-  .inner:has(#header) .logo{ display: none;}
   #img-slide ul li .inner p{ font-size: 110px !important;}
 }
 
@@ -79,7 +78,7 @@ body {cursor: url('../img/ui/cursor-normal.png') 6 6, auto; overflow: hidden;}
 #img-slide ul li{width: calc(100% / 3); position: relative; height: 100%;}
 #img-slide ul li img{position: absolute; object-fit: cover; height: 100%; width: 100%;}
 #img-slide ul li .inner{position: relative; left: 0; right: 0; height: calc(100% - 80px); top: 80px;}
-#img-slide ul li .inner p{ color: white; font-size: 148px; font-family: 'YiSunShinDotumM'; position: absolute;}
+#img-slide ul li .inner p{ color: white; font-size: 8rem; font-family: 'YiSunShinDotumM'; position: absolute;}
 #img-slide ul li:nth-of-type(1) .inner p{left: 8%; top: 20%;}
 #img-slide ul li:nth-of-type(2) .inner p{right: 12%; top: 13%;}
 #img-slide ul li:nth-of-type(3) .inner p{left: 18%; top: 40%;}
