@@ -3,6 +3,7 @@ const $selfie = document.querySelector(".cover-letter .inner .left #selfie");
 const $toMountain = document.querySelector(
   ".cover-letter .inner .left #to-mountain"
 );
+const $scrollSection = document.querySelector("#arrow--section");
 const $$textSections = document.querySelectorAll(".right .text-section");
 
 let isMobileAtHistory = false;
@@ -14,6 +15,7 @@ const SECTION_MARGIN = 2000;
 
 let titleGsap;
 let selfieGsap;
+let scrollGsap;
 let selfie2Gsap;
 let emailGsap;
 
@@ -58,7 +60,11 @@ function killAnimation(){
     if (selfie2Gsap.scrollTrigger) {
       selfie2Gsap.scrollTrigger.kill();
     }
-    selfie2Gsap.revert().kill();
+    scrollGsap.revert().kill();
+    if (scrollGsap.scrollTrigger) {
+      scrollGsap.scrollTrigger.kill();
+    }
+    scrollGsap.revert().kill();
 
     textAnimations.forEach(textAnimation=>{
       textAnimation.animation.revert().kill();
@@ -90,10 +96,21 @@ function pcAnimation() {
     scrollTrigger: {
       trigger: $selfie,
       start: "top top",
-      end: `+=${3 * SECTION_MARGIN + 3 * innerHeight + innerHeight + 80 - 6}`,
+      end: `+=${4 * SECTION_MARGIN + 4 * innerHeight + innerHeight + 80 - 6}`,
       pin: true,
       anticipatePin: 1,
       //markers: true,
+    },
+  });
+
+  scrollGsap = gsap.to($scrollSection, {
+    scrollTrigger: {
+      trigger: $scrollSection,
+      start: "top top",
+      end: `+=2000`,
+      pin: true,
+      anticipatePin: 1,
+      // markers: true,
     },
   });
 

@@ -69,6 +69,45 @@ body {cursor: url('../../img/ui/cursor-history.png') 6 6, auto; overflow-x: hidd
 .cover-letter .inner .right>section h4 { font-size: 1.6rem !important; }
 .cover-letter .inner .right .text-section { display: flex; flex-direction: column; justify-content: center; box-sizing: border-box; padding-left: 8rem; height: 100vh; margin-top: 2000px; box-sizing: border-box;}
 
+#arrow--section{ height: 100vh; box-sizing: border-box; padding-top: 80px; display: flex; align-items: center; justify-content: center;}
+
+#arrow--section .arrow--wrap{display: flex; flex-direction: column; align-items: center; box-sizing: border-box; padding: 14px; border: 3px solid #fff; border-radius: 40px;animation: ani-arrow-wrap 2s linear infinite; }
+#arrow--section .arrow--wrap .arrow--line{width: 4px; background-color: white; height: 16px; border-radius: 2px; box-shadow: 0px 1px 10px 2px rgba(255, 255, 255, .6), 0px 1px 10px 2px rgba(255, 255, 255, .6) inset;}
+#arrow--section .arrow--wrap .arrow{width: 24px; height: 24px; box-sizing:border-box; position: relative;}
+#arrow--section .arrow--wrap .arrow .arrow--left,
+#arrow--section .arrow--wrap .arrow .arrow--right{width: 90%; height: 4px; background-color: #fff;  border-radius: 2px; position: absolute;bottom: 10px;}
+#arrow--section .arrow--wrap .arrow .arrow--right{transform: rotateZ(-45deg); right: -6px;}
+#arrow--section .arrow--wrap .arrow .arrow--left{transform: rotateZ(45deg);left: -6px; }
+
+#arrow--section .arrow--wrap .arrow:nth-of-type(1) .arrow--left{animation: ani-arrow1 2s linear infinite;}
+#arrow--section .arrow--wrap .arrow:nth-of-type(1) .arrow--right{animation: ani-arrow1 2s linear infinite;}
+
+#arrow--section .arrow--wrap .arrow:nth-of-type(2) .arrow--left{animation: ani-arrow2 2s linear infinite;}
+#arrow--section .arrow--wrap .arrow:nth-of-type(2) .arrow--right{animation: ani-arrow2 2s linear infinite;}
+
+#arrow--section .arrow--wrap .arrow:nth-of-type(3) .arrow--left{animation: ani-arrow3 2s linear infinite;}
+#arrow--section .arrow--wrap .arrow:nth-of-type(3) .arrow--right{animation: ani-arrow3 2s linear infinite;}
+
+
+@keyframes ani-arrow1 {
+  0%{}
+  16.67%{box-shadow: 0px 1px 10px 5px rgba(255, 255, 255, .6), 0px 1px 10px 3px rgba(255, 255, 255, .6) inset;}
+  50%{box-shadow: 0px 1px 10px 5px rgba(255, 255, 255, .6), 0px 1px 10px 3px rgba(255, 255, 255, .6) inset;}
+  100%{}
+}
+@keyframes ani-arrow2 {
+  0%{}
+  33.33%{box-shadow: 0px 1px 10px 5px rgba(255, 255, 255, .6), 0px 1px 10px 3px rgba(255, 255, 255, .6) inset;}
+  66.67%{box-shadow: 0px 1px 10px 5px rgba(255, 255, 255, .6), 0px 1px 10px 3px rgba(255, 255, 255, .6) inset;}
+  100%{}
+}
+@keyframes ani-arrow3 {
+  0%{}
+  50%{box-shadow: 0px 1px 10px 5px rgba(255, 255, 255, .6), 0px 1px 10px 3px rgba(255, 255, 255, .6) inset;}
+  83.33%{box-shadow: 0px 1px 10px 5px rgba(255, 255, 255, .6), 0px 1px 10px 3px rgba(255, 255, 255, .6) inset;}
+  100%{}
+}
+
 
 .text-section:first{margin-top: 500px;}
 .text-section:last-child{margin-bottom: 500px;}
@@ -205,6 +244,7 @@ body {cursor: url('../../img/ui/cursor-history.png') 6 6, auto; overflow-x: hidd
 
   .text-section:first{margin-top: 0px;}
   #email-section{display: none;}
+  #arrow--section{display: none;}
   #mobile--email{display: flex;}
   #history-wrap .right section:last-of-type{margin-bottom: 0;}
 }
