@@ -27,13 +27,14 @@ body {cursor: url('../img/ui/cursor-normal.png') 6 6, auto; overflow: hidden;}
 #wrap{height: 100vh; }
 
 .inner:has(#header) {position: fixed; left: 0; right: 0; height: 80px; display: flex; justify-content: center; z-index: 30;}
-
+/* .inner:has(#header) .logo{ position: absolute; top: 50%; transform: translate(0,-50%); left: 0;} */
 
 @media screen and (max-width:1659px) {
   .inner{width: 100%;}
 }
 @media screen and (max-width:912px) {
   #img-flip-area .image {display: block !important; width: 100px; height: 100px;}
+  /* .inner:has(#header) .logo{ display: none;} */
   #img-slide ul li .inner p{ font-size: 110px !important;}
 }
 

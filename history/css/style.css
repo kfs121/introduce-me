@@ -37,6 +37,7 @@ body {cursor: url('../../img/ui/cursor-history.png') 6 6, auto; overflow-x: hidd
 
 
 .inner:has(#header) {height: 80px; display: flex; justify-content: center; z-index: 30; position: fixed; left: 50%; transform: translateX(-50%);}
+/* .inner:has(#header) .logo{ position: absolute; top: 50%; transform: translate(0,-50%); left: 0;} */
 
 .gnb a {display: block;}
 
@@ -197,6 +198,7 @@ body {cursor: url('../../img/ui/cursor-history.png') 6 6, auto; overflow-x: hidd
 @media screen and (max-width:1659px) {
   #wrap{height: unset !important; width: 100%; box-sizing: border-box;}
   .inner {width: 100%;}
+  /* .inner:has(#header) .logo{display: none;} */
   .inner:has(#header) {background-color: rgb(0, 0, 0); position: fixed; top: 0; left: 50%;}
 
   #header .gnb>ul{gap: 150px; width: 100%;}
