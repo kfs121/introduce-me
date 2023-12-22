@@ -29,16 +29,14 @@ if(!checkMobile()){
 }
 
 window.addEventListener("resize", (e)=>{
-  if(checkMobile()){
-    console.log("is mobile");
-    $mouse.style.display = 'none';
+  if(!checkMobile()){
     if(isMobile) return;
+    console.log("is not mobile");
     initMouseEnv();
     
   }else{
-    console.log("is not mobile");
-    $mouse.style.display = 'block';
     if(!isMobile) return;
+    console.log("is mobile");
     removeInitMouseEnv();
   }
 });
@@ -64,6 +62,7 @@ function initMouseEnv(){
     $element.addEventListener("mouseout", removeMouseHoverEvent);
   });
   isMobile = true;
+  $mouse.style.display = 'block';
 }
 
 
@@ -79,13 +78,28 @@ function removeInitMouseEnv(){
     $element.removeEventListener("mouseout", removeMouseHoverEvent);
   });
   isMobile = false;
+  $mouse.style.display = 'none';
 }
 
-function checkMobile(){
-  try{
-    document.createEvent("TouchEvent");
-    return true;
-  }catch(e){
-    return false;
-  }
+// function checkMobile(){
+//   try{
+//     document.createEvent("TouchEvent");
+//     return true;
+//   }catch(e){
+//     return false;
+//   }
+// }
+
+
+function checkMobile() {
+  const mobileRegex = [
+    /Android/i,
+    /iPhone/i,
+    /iPad/i,
+    /iPod/i,
+    /BlackBerry/i,
+    /Windows Phone/i
+  ]
+
+  return mobileRegex.some(mobile => window.navigator.userAgent.match(mobile))
 }
