@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" name="viewport" />
 
   <link rel="stylesheet" href="./css/style.css">
 
@@ -16,7 +16,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script defer src="./js/custom.js"></script>
-  <script defer src="./js/gsap.js"></script>
+  <!-- <script defer src="./js/gsap.js"></script> -->
   <script defer src="./js/email.js"></script>
   <title>Document</title>
 </head>
@@ -54,8 +54,7 @@
 
           <div class="right">
             <section id="arrow--section">
-              <div class="arrow--wrap">
-                <span class="arrow--line"></span>
+
                 <div class="arrow">                
                   <span class="arrow--left"></span>
                   <span class="arrow--right"></span>
@@ -68,7 +67,7 @@
                   <span class="arrow--left"></span>
                   <span class="arrow--right"></span>
                 </div>
-              </div>
+
             </section>
             <section id="intro" class="text-section">
               <h4>모든 문제는 내 앞에서 해결된다.</h4>
@@ -402,7 +401,19 @@
     </section>
   </div>
   <div class="height_div"></div>
-  <div id="mouse"></div>
+  <div id="mouse">
+    <div class="arrow--wrap">
+      <span class="arrow--line"></span>
+      <div class="arrow">                
+        <span class="arrow--left"></span>
+        <span class="arrow--right"></span>
+      </div>
+      <div class="arrow">                
+        <span class="arrow--left"></span>
+        <span class="arrow--right"></span>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

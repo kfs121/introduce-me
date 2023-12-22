@@ -11,7 +11,7 @@ img{display: block;}
 body{font-family: 'Noto Sans KR', sans-serif;}
 
 /* common */
-body {cursor: url('../../img/ui/cursor-history.png') 6 6, auto; overflow-x: hidden; color: #666666; scroll-behavior: smooth; opacity: 0; animation: ani-loadPage 2s forwards; background-color: #000;}
+body {cursor: none; overflow-x: hidden; color: #666666; scroll-behavior: smooth; opacity: 0; animation: ani-loadPage 2s forwards; background-color: #000;}
 
 @keyframes ani-loadPage {
   0%{opacity: 0;}
@@ -69,24 +69,24 @@ body {cursor: url('../../img/ui/cursor-history.png') 6 6, auto; overflow-x: hidd
 .cover-letter .inner .right>section h4 { font-size: 1.6rem !important; }
 .cover-letter .inner .right .text-section { display: flex; flex-direction: column; justify-content: center; box-sizing: border-box; padding-left: 8rem; height: 100vh; margin-top: 2000px; box-sizing: border-box;}
 
-#arrow--section{ height: 100vh; box-sizing: border-box; padding-top: 80px; display: flex; align-items: center; justify-content: center;}
+#arrow--section{ height: 100vh; box-sizing: border-box; padding-top: 80px; display: flex; align-items: center; justify-content: center; flex-direction: column;}
 
-#arrow--section .arrow--wrap{display: flex; flex-direction: column; align-items: center; box-sizing: border-box; padding: 14px; border: 3px solid #fff; border-radius: 40px;animation: ani-arrow-wrap 2s linear infinite; }
-#arrow--section .arrow--wrap .arrow--line{width: 4px; background-color: white; height: 16px; border-radius: 2px; box-shadow: 0px 1px 10px 2px rgba(255, 255, 255, .6), 0px 1px 10px 2px rgba(255, 255, 255, .6) inset;}
-#arrow--section .arrow--wrap .arrow{width: 24px; height: 24px; box-sizing:border-box; position: relative;}
-#arrow--section .arrow--wrap .arrow .arrow--left,
-#arrow--section .arrow--wrap .arrow .arrow--right{width: 90%; height: 4px; background-color: #fff;  border-radius: 2px; position: absolute;bottom: 10px;}
-#arrow--section .arrow--wrap .arrow .arrow--right{transform: rotateZ(-45deg); right: -6px;}
-#arrow--section .arrow--wrap .arrow .arrow--left{transform: rotateZ(45deg);left: -6px; }
+.arrow--wrap{position: absolute; z-index: 9999;display: flex; flex-direction: column; align-items: center; box-sizing: border-box; padding: 14px; border: 3px solid #fff; border-radius: 40px;animation: ani-arrow-wrap 2s linear infinite; }
+.arrow--line{width: 4px; background-color: white; height: 16px; border-radius: 2px; box-shadow: 0px 1px 10px 2px rgba(255, 255, 255, .6), 0px 1px 10px 2px rgba(255, 255, 255, .6) inset;}
+.arrow{width: 24px; height: 24px; box-sizing:border-box; position: relative;}
+.arrow .arrow--left,
+.arrow .arrow--right{width: 90%; height: 4px; background-color: #fff;  border-radius: 2px; position: absolute;bottom: 10px;}
+.arrow .arrow--right{transform: rotateZ(-45deg); right: -6px;}
+.arrow .arrow--left{transform: rotateZ(45deg);left: -6px; }
 
-#arrow--section .arrow--wrap .arrow:nth-of-type(1) .arrow--left{animation: ani-arrow1 2s linear infinite;}
-#arrow--section .arrow--wrap .arrow:nth-of-type(1) .arrow--right{animation: ani-arrow1 2s linear infinite;}
+.arrow:nth-of-type(1) .arrow--left{animation: ani-arrow1 2s linear infinite;}
+.arrow:nth-of-type(1) .arrow--right{animation: ani-arrow1 2s linear infinite;}
 
-#arrow--section .arrow--wrap .arrow:nth-of-type(2) .arrow--left{animation: ani-arrow2 2s linear infinite;}
-#arrow--section .arrow--wrap .arrow:nth-of-type(2) .arrow--right{animation: ani-arrow2 2s linear infinite;}
+.arrow:nth-of-type(2) .arrow--left{animation: ani-arrow2 2s linear infinite;}
+.arrow:nth-of-type(2) .arrow--right{animation: ani-arrow2 2s linear infinite;}
 
-#arrow--section .arrow--wrap .arrow:nth-of-type(3) .arrow--left{animation: ani-arrow3 2s linear infinite;}
-#arrow--section .arrow--wrap .arrow:nth-of-type(3) .arrow--right{animation: ani-arrow3 2s linear infinite;}
+.arrow:nth-of-type(3) .arrow--left{animation: ani-arrow3 2s linear infinite;}
+.arrow:nth-of-type(3) .arrow--right{animation: ani-arrow3 2s linear infinite;}
 
 
 @keyframes ani-arrow1 {
@@ -271,9 +271,21 @@ body {cursor: url('../../img/ui/cursor-history.png') 6 6, auto; overflow-x: hidd
 
 
 @media (hover:hover) and (pointer:fine) {
-  a:hover {cursor: url('../../img/ui/cursor-hover.png') 22 22, auto;}
-  .hover-mouse{ backdrop-filter: invert(100) !important; width: 120px !important; height: 120px !important; border-radius: 120px !important;}
+  a:hover {cursor: none;}
   #header .gnb>ul>li>a:hover{font-size: 28px;}
-  #mouse {position: absolute; z-index: 9999; top: 0; left: 0; border: 3px solid #fff; width: 70px; height: 70px; border-radius: 70px; transform: translate(-50%, -50%); box-shadow: 0 0 15px #000000; pointer-events: none; transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
-  }
+  #mouse {position: fixed; z-index: 9999; top: 0; left: 0; pointer-events: none;}
+  #mouse .arrow--wrap{position: unset; }
+  body:has(.hover-mouse) .arrow--wrap .arrow--line{background-color: rgb(255, 23, 23);}
+  /* .hover-mouse{ }
+  .hover-mouse .arrow--wrap{} */
+
+  .arrow--wrap{display: flex; flex-direction: column; align-items: center; box-sizing: border-box; padding: 8px; border: 3px solid #c2c2c2; border-radius: 40px; }
+  .arrow--wrap .arrow--line{width: 4px; background-color: white; height: 8px; border-radius: 2px; margin-bottom: 10px; box-shadow: none;}
+  .arrow--wrap .arrow{width: 16px; height: 16px; box-sizing:border-box; position: relative;}
+  .arrow--wrap .arrow .arrow--left,
+  .arrow--wrap .arrow .arrow--right{width: 90%; height: 4px; background-color: #fff;  border-radius: 2px; position: absolute;bottom: 10px;}
+  .arrow--wrap .arrow .arrow--right{transform: rotateZ(-45deg); right: -3px;}
+  .arrow--wrap .arrow .arrow--left{transform: rotateZ(45deg);left: -3px; }
 }
+
+#mouse{display: none;}

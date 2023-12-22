@@ -1,18 +1,16 @@
 // main
 const $mouse = document.querySelector("#mouse");
 
-const pointWidth = 1660;
+const POINT_WIDTH = 615;
 
-let userMouseY;
 
-const isMobile = checkMobile();
+let isMobile;
+let checkSystemMobile = checkMobile();
 
 
 const mouseEvent = (e) => {
-  mouse.style.left = e.clientX + "px";
-  userMouseY = e.clientY;
-  mouse.style.top = e.pageY + "px";
-  
+  mouse.style.left = e.clientX + -17 + "px";
+  mouse.style.top = e.clientY + -20 + "px";
 }
 
 const mouseHoverEvent = () => {
@@ -24,14 +22,26 @@ const removeMouseHoverEvent = () => {
 };
 
 
-if(!isMobile){
+if(!checkMobile()){
   initMouseEnv();
-  document.addEventListener("scroll", (e)=>{
-    mouse.style.top = window.scrollY + userMouseY + "px";
-  });
 }else{
   removeInitMouseEnv();
 }
+
+window.addEventListener("resize", (e)=>{
+  if(checkMobile()){
+    console.log("is mobile");
+    $mouse.style.display = 'none';
+    if(isMobile) return;
+    initMouseEnv();
+    
+  }else{
+    console.log("is not mobile");
+    $mouse.style.display = 'block';
+    if(!isMobile) return;
+    removeInitMouseEnv();
+  }
+});
 
 
 
@@ -53,6 +63,7 @@ function initMouseEnv(){
   $$a.forEach(function ($element) {
     $element.addEventListener("mouseout", removeMouseHoverEvent);
   });
+  isMobile = true;
 }
 
 
@@ -67,6 +78,7 @@ function removeInitMouseEnv(){
   $$a.forEach(function ($element) {
     $element.removeEventListener("mouseout", removeMouseHoverEvent);
   });
+  isMobile = false;
 }
 
 function checkMobile(){
