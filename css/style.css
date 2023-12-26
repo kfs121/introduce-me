@@ -26,16 +26,16 @@ body {cursor: url('../img/ui/cursor-normal.png') 6 6, auto; overflow: hidden;}
 /* body * {outline: 1px dotted red;} */
 #wrap{height: 100vh; }
 
-.inner:has(#header) {position: fixed; left: 0; right: 0; height: 80px; display: flex; justify-content: center; z-index: 100; color: black;}
+.inner:has(#header) {position: fixed; left: 0; right: 0; height: 80px; display: flex; justify-content: center; z-index: 100; color: black; background-color: transparent;}
 /* .inner:has(#header) .logo{ position: absolute; top: 50%; transform: translate(0,-50%); left: 0;} */
 
 
 
 .gnb a {display: block;}
 
-#header{display: flex; justify-content: center; gap: 200px; align-items: center;}
-#header .gnb{ display: flex; align-items: center; }
-#header .gnb>ul{display: flex; justify-content: center; gap: 200px;  }
+#header{display: flex; justify-content: center; gap: 200px; align-items: center;background-color: transparent;}
+#header .gnb{ display: flex; align-items: center; background-color: transparent;}
+#header .gnb>ul{display: flex; justify-content: center; gap: 200px;  background-color: transparent;}
 #header .gnb>ul>li{display: flex; align-items: center;}
 #header .gnb>ul>li:nth-of-type(1) a{border-bottom: 3px solid black; font-size: 28px;}
 #header .gnb>ul>li>a{padding: 14px 0; font-size: 20px; color: black !important; font-weight: 400; transition: .5s;}
@@ -82,7 +82,7 @@ body {cursor: url('../img/ui/cursor-normal.png') 6 6, auto; overflow: hidden;}
 }
 @media screen and (max-width:1659px) {
   .inner{width: 100%;}
-  .inner:has(#header) {position: fixed; color: black !important;}
+  .inner:has(#header) {position: fixed; color: black !important;background-color: transparent;}
   #header .gnb>ul>li:nth-of-type(1) a{border-bottom: 3px solid black;}
 }
 @media screen and (max-width:912px) {
