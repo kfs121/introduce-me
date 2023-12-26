@@ -4,8 +4,9 @@ const $contentSlideUl = document.querySelector("#contents-slide .inner ul");
 const $contentSlideLi = document.querySelector("#contents-slide .inner ul li");
 const $contentSlideLiWork = document.querySelector("#contents-slide .inner ul li .work");
 const $$contentSlideLi = document.querySelectorAll("#contents-slide .inner ul li");
+const $$foldBtn = $contentSlideUl.querySelectorAll(".fold--btn");
 
-const pointWidth = 1660;
+const POINT_WIDTH = 1660;
 
 const ONE_SLIDE_ELEMENTAL_WIDTH =  640
 
@@ -51,6 +52,19 @@ const removeMouseHoverEvent = () => {
 };
 
 
+$$foldBtn.forEach($foldBtn=>{
+  $foldBtn.down = true;
+  $foldBtn.addEventListener("click", (e)=>{
+    if( e.target.parentElement.classList.contains("show") ){
+      e.target.parentElement.classList.remove("show");
+    }else{
+      e.target.parentElement.classList.add("show");
+    }
+
+  });
+})
+
+
 if(!isMobile){
   initMouseEnv();
   document.addEventListener("scroll", (e)=>{
@@ -78,10 +92,10 @@ if(!isMobile){
   removeInitMouseEnv();
 }
 
-setScrollEvent(pointWidth);
+setScrollEvent(POINT_WIDTH);
 
 window.addEventListener('resize', ()=>{
-  setScrollEvent(pointWidth);
+  setScrollEvent(POINT_WIDTH);
 })
 
 
@@ -93,8 +107,8 @@ function setScrollEvent(windowWidth){
     currContentsLeftPx = 0;
     fillSlider(currContentsLeftPx);
     if(currScrollEventEnv === 2) return;
-    if(!isMobile) return;
     removeInitScrollEvent();
+    if(!isMobile) return;
   } else {
     $contentSlideUl.style.width = SLIDE_WIDTH + "px";
     if(currScrollEventEnv === 1) return;

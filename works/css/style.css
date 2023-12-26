@@ -50,7 +50,7 @@ body{font-size: 16px;}
 #contents-slide .inner ul li{position: relative; overflow: hidden; transition: .5s; width: 320px;}
 #contents-slide .inner ul li .work{ display: block; width: 320px; height: 540px; filter: grayscale(100); transition: .5s;}
 #contents-slide .inner ul img{ object-fit: cover; object-position: center; height: 100%; position: absolute; width: 100%;}
-#contents-slide .inner ul .description{ height: 100%; position: absolute; width: 100%; background-color: rgba(0, 0, 0, .7);right: -100%; transition: 1s; box-sizing: border-box; padding: 40px; color: white; gap: 1rem; display: flex; flex-direction: column; align-items: center;}
+#contents-slide .inner ul .description{ height: 100%; position: absolute; width: 100%; background-color: rgba(0, 0, 0, .7);right: -100%; transition: 1s; box-sizing: border-box; padding: 40px; color: white; gap: 1rem; display: flex; flex-direction: column; align-items: center; transition: .5s;}
 #contents-slide .inner ul .description a{ color: orange;}
 
 #contents-slide .inner ul .description>h4{ text-align: center; font-size: 1.4rem; flex: 1;}
@@ -64,6 +64,8 @@ body{font-size: 16px;}
 #contents-slide .inner ul .description>p::-webkit-scrollbar{background-color: rgba(0, 0, 0, 0); width: 10px;}
 #contents-slide .inner ul .description>p::-webkit-scrollbar-thumb{background-color: rgba(247, 247, 247,.8); border-radius: 6px;}
 #contents-slide .inner ul .description>a{display: inline;}
+
+#contents-slide .inner ul .description>.fold--btn{background-position: center; background-repeat: no-repeat; background-size: contain; background-image: url(../../img/ui/arrow-down.png); display: none; width: 40px; height: 40px;}
 
 
 
@@ -87,8 +89,15 @@ body{font-size: 16px;}
   #contents-slide .inner ul li{text-align: center;}
   #contents-slide .inner ul .work { filter: grayscale(0) !important; width: 100% !important; transition: .3s;}
   #contents-slide .inner ul img{ height: 540px; width: 100%;}
-  #contents-slide .inner ul .description{right: 0;background-color: rgba(0, 0, 0, .3); padding: 10px;}
-  #contents-slide .inner ul .description>.source-wrap{ flex: 2;}
+  #contents-slide .inner ul .description{right: 0;background-color: rgba(0, 0, 0, .3); padding: 10px; height: 20%;}
+  #contents-slide .inner ul .description p{ display: none; }
+  #contents-slide .inner ul .description .source-wrap { display: none; }
+
+  #contents-slide .inner ul .description.show{ height: 100%; }
+  #contents-slide .inner ul .description.show>.source-wrap{ display: block;}
+  #contents-slide .inner ul .description.show>p{ display: block;}
+  #contents-slide .inner ul .description .fold--btn{ display: block;}
+  #contents-slide .inner ul .description.show .fold--btn{ background-image: url(../../img/ui/arrow-up.png);}
   
 
   #slide-area{display: none;}
