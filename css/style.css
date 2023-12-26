@@ -41,8 +41,8 @@ body {cursor: url('../img/ui/cursor-normal.png') 6 6, auto; overflow: hidden;}
 #header .gnb>ul>li>a{padding: 14px 0; font-size: 20px; color: white; font-weight: 400; transition: .5s;}
 
 
-#container {height: 100%;}
-#container #img-slide {height: 100%; overflow: hidden;}
+#container {height: 100%; background-color: transparent;}
+#container #img-slide {height: 100%; overflow: hidden; background-color: transparent;}
 #img-slide ul {display: flex; width: 300%; position: relative; height: 100%; transition: 1s; left: 0;}
 #img-slide ul li{width: calc(100% / 3); position: relative; height: 100%;}
 #img-slide ul li img{position: absolute; object-fit: cover; height: 100%; width: 100%;}
