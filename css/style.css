@@ -29,39 +29,7 @@ body {cursor: url('../img/ui/cursor-normal.png') 6 6, auto; overflow: hidden;}
 .inner:has(#header) {position: fixed; left: 0; right: 0; height: 80px; display: flex; justify-content: center; z-index: 30;}
 /* .inner:has(#header) .logo{ position: absolute; top: 50%; transform: translate(0,-50%); left: 0;} */
 
-@media screen and (max-width:1659px) {
-  .inner{width: 100%;}
-}
-@media screen and (max-width:912px) {
-  #img-flip-area .image {display: block !important; width: 100px; height: 100px;}
-  /* .inner:has(#header) .logo{ display: none;} */
-  #img-slide ul li .inner p{ font-size: 110px !important;}
-}
 
-@media screen and (max-width:767px) {
-  .inner{width: 100%;}
-  #header .gnb>ul{display: flex; justify-content: center; gap: 40px !important; }
-  /* .img-slide-controller {display: none;} */
-  #img-slide ul li .inner p{ font-size: 96px !important;}
-
-  .img-slide-controller {display: none;}
-}
-
-
-
-@media screen and (max-width:415px) {
-  .inner{width: 100%;}
-  #img-flip-area>.right {cursor: unset;}
-  #img-flip-area>.left {cursor: unset;}
-  #img-flip-area .image {width: 60px !important; height: 60px !important;}
-  #img-flip-area .image.left {left:0 !important;}
-  #img-flip-area .image.right {right:0 !important;}
-  .inner:has(#header) .logo{ display: none;}
-  #header .gnb>ul{display: flex; justify-content: center; gap: 40px !important; }
-  .img-slide-controller {display: none;}
-  #img-slide ul li .inner p{ font-size: 60px !important;}
-  #header .gnb>ul>li:nth-of-type(1) a{font-size: 16px !important;}
-}
 
 .gnb a {display: block;}
 
@@ -104,8 +72,6 @@ body {cursor: url('../img/ui/cursor-normal.png') 6 6, auto; overflow: hidden;}
 #img-flip-area>.left {cursor: url("../img/ui/cursor-left.png") 18 25, auto;}
 #img-flip-area>.left .image.left{background-image: url(../img/ui/cursor-left.png); top: 45%; left: 10px; transform: translate(50%, -50%);}
 
-
-
 @media (hover:hover) and (pointer:fine) {
   a:hover {cursor: url('../img/ui/cursor-hover.png') 22 22, auto;}
   .hover-mouse{ backdrop-filter: invert(100) !important;}
@@ -114,3 +80,37 @@ body {cursor: url('../img/ui/cursor-normal.png') 6 6, auto; overflow: hidden;}
   #mouse {position: absolute; z-index: 9999; top: 0; left: 0; border: 3px solid #222; width: 70px; height: 70px; border-radius: 70px; backdrop-filter: blur(3px); transform: translate(-50%, -50%); box-shadow: 0 0 15px #000000; pointer-events: none; transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
   }
 }
+@media screen and (max-width:1659px) {
+  .inner{width: 100%;}
+}
+@media screen and (max-width:912px) {
+  #img-flip-area .image {display: block !important; width: 100px; height: 100px;}
+  /* .inner:has(#header) .logo{ display: none;} */
+  #img-slide ul li .inner p{ font-size: 110px !important;}
+}
+
+@media screen and (max-width:767px) {
+  .inner{width: 100%;}
+  #header .gnb>ul{display: flex; justify-content: center; gap: 40px !important; }
+  /* .img-slide-controller {display: none;} */
+  #img-slide ul li .inner p{ font-size: 96px !important;}
+
+  .img-slide-controller {display: none;}
+}
+
+
+
+@media screen and (max-width:415px) {
+  .inner{width: 100%;}
+  #img-flip-area>.right {cursor: unset;}
+  #img-flip-area>.left {cursor: unset;}
+  #img-flip-area .image {width: 60px !important; height: 60px !important;}
+  #img-flip-area .image.left {left:0 !important;}
+  #img-flip-area .image.right {right:0 !important;}
+  .inner:has(#header) .logo{ display: none;}
+  #header .gnb>ul{display: flex; justify-content: center; gap: 40px !important; }
+  .img-slide-controller {display: none;}
+  #img-slide ul li .inner p{ font-size: 60px !important;}
+  #header .gnb>ul>li:nth-of-type(1) a{font-size: 16px !important;}
+}
+
