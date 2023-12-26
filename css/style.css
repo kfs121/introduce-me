@@ -82,7 +82,7 @@ body {cursor: url('../img/ui/cursor-normal.png') 6 6, auto; overflow: hidden;}
 }
 @media screen and (max-width:1659px) {
   .inner{width: 100%;}
-  .inner:has(#header) {color: white; background-color: transparent;}
+  .inner:has(#header) {color: white; background-color: transparent !important;}
 }
 @media screen and (max-width:912px) {
   #img-flip-area .image {display: block !important; width: 100px; height: 100px;}
