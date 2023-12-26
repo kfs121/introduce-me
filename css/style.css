@@ -33,9 +33,9 @@ body {cursor: url('../img/ui/cursor-normal.png') 6 6, auto; overflow: hidden;}
 
 .gnb a {display: block;}
 
-#header{display: flex; justify-content: center; gap: 200px; align-items: center;}
-#header .gnb{ display: flex; align-items: center;}
-#header .gnb>ul{display: flex; justify-content: center; gap: 200px; }
+#header{display: flex; justify-content: center; gap: 200px; align-items: center; background-color: transparent;}
+#header .gnb{ display: flex; align-items: center; background-color: transparent;}
+#header .gnb>ul{display: flex; justify-content: center; gap: 200px;  background-color: transparent;}
 #header .gnb>ul>li{display: flex; align-items: center; }
 #header .gnb>ul>li:nth-of-type(1) a{border-bottom: 3px solid white; font-size: 28px;}
 #header .gnb>ul>li>a{padding: 14px 0; font-size: 20px; color: white; font-weight: 400; transition: .5s;}
