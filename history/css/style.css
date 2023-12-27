@@ -54,8 +54,10 @@ body {cursor: none; overflow-x: hidden; color: #666666; scroll-behavior: smooth;
 
 #history-wrap {color: white;}
 
-#history-wrap .title-section { display: flex; align-items: center; justify-content: center; height: 100vh;}
+#history-wrap .title-section { display: flex; align-items: center; justify-content: center; height: 100vh; position: relative;}
 #history-wrap .title-section h3{font-size: 10rem;}
+#history-wrap .title-section .arrow-wrap{position: absolute; bottom: 100px; left: 50%; transform: translateX(-50%);}
+
 
 .cover-letter .inner{display: flex; max-width: 1660px !important;}
 .cover-letter .inner .left{flex: 50%; height: calc(100vh - 80px); box-sizing: border-box;}
@@ -240,6 +242,8 @@ body {cursor: none; overflow-x: hidden; color: #666666; scroll-behavior: smooth;
   #history-wrap .title-section h3{font-size: 4rem;}
 
   .gauge-wrap {width: 100%; padding-right: 4rem; box-sizing: border-box;}
+
+  #history-wrap .title-section .arrow-wrap{ display: none; }
 
 
   .text-section:first{margin-top: 0px;}
