@@ -22,7 +22,7 @@ body{font-family: 'Noto Sans KR', sans-serif;}
 body {cursor: url('../img/ui/cursor-normal.png') 6 6, auto; overflow: hidden;}
 
 
-.inner {width: 1660px; margin: 0 auto;}
+.inner {max-width: 1660px; margin: 0 auto;}
 /* body * {outline: 1px dotted red;} */
 #wrap{height: 100vh; }
 

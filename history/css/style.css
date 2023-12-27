@@ -24,7 +24,7 @@ body {cursor: none; overflow-x: hidden; color: #666666; scroll-behavior: smooth;
 
 
 
-.inner {width: 1660px; margin: 0 auto;}
+.inner {max-width: 1660px; margin: 0 auto;}
 /* body * {outline: 1px dotted red;} */
 #wrap{background-color: var(--bg-color); color: var(--font-color);}
 
